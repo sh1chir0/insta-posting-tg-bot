@@ -40,6 +40,9 @@ public class User {
     private List<SocialMedia> socialMedias = new ArrayList<>();
     @OneToOne(cascade = CascadeType.REMOVE)
     private SocialMedia tempSocialMedia;
+    @OneToOne(cascade = CascadeType.REMOVE)
+    private Post tempPost;
+
     @Column(name = "dateOfCreated")
     private LocalDateTime dateOfCreated;
 

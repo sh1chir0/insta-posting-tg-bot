@@ -7,5 +7,5 @@ package ua.sh1chiro.TelegramBot.helpers.enums;
  */
 
 public enum UserStatus {
-    FREE, WAITING_LOGIN, WAITING_PASSWORD;
+    FREE, WAITING_LOGIN, WAITING_PASSWORD, WAITING_TITLE, WAITING_DESCRIPTION, WAITING_VIDEO
 }
