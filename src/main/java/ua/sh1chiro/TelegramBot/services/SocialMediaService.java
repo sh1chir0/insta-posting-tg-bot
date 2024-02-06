@@ -3,6 +3,7 @@ package ua.sh1chiro.TelegramBot.services;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ua.sh1chiro.TelegramBot.model.SocialMedia;
 import ua.sh1chiro.TelegramBot.repositories.SocialMediaRepository;
 
 /**
@@ -16,4 +17,8 @@ import ua.sh1chiro.TelegramBot.repositories.SocialMediaRepository;
 @RequiredArgsConstructor
 public class SocialMediaService {
     private final SocialMediaRepository socialMediaRepository;
+
+    public SocialMedia save(SocialMedia socialMedia){
+        return socialMediaRepository.save(socialMedia);
+    }
 }

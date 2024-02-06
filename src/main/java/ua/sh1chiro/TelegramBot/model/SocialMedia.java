@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ua.sh1chiro.TelegramBot.enums.SocialMediaType;
+import ua.sh1chiro.TelegramBot.helpers.enums.SocialMediaType;
 
 /**
  * Created by Sh1chiro on 05.02.2024.

@@ -4,8 +4,10 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ua.sh1chiro.TelegramBot.helpers.enums.UserStatus;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,12 +28,18 @@ public class User {
     private Long id;
     @Column(name = "nickname")
     private String nickname;
+    @Column(name = "chatId")
+    private Long chatId;
     @Column(name = "password")
     private String password;
     @Column(name = "access")
     private boolean access;
-    @OneToMany(cascade = CascadeType.REMOVE)
-    private List<SocialMedia> socialMedias;
+    @Column(name = "status")
+    private UserStatus status;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private List<SocialMedia> socialMedias = new ArrayList<>();
+    @OneToOne(cascade = CascadeType.REMOVE)
+    private SocialMedia tempSocialMedia;
     @Column(name = "dateOfCreated")
     private LocalDateTime dateOfCreated;
 
